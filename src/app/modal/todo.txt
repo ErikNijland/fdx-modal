@@ -1,4 +1,3 @@
-- Close modal
 - Dummy CSS
 - Make FocusTrap inline
 - Make stand-alone FocusTrap module
@@ -6,6 +5,8 @@
 - Escape to close
 - Can registerModal be private?
 - distinctUntilChanges on isOpen
+- Move modal in DOM (check with Jan)
+- scroll within modal (or not)
 
 - Directive to attach to button
 - How to use readme
