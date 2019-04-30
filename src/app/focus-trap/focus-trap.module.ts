@@ -1,4 +1,6 @@
 import {NgModule} from '@angular/core';
+
+import {A11yModule} from '@angular/cdk/a11y';
 import {FocusTrapService} from './focus-trap.service';
 import {WindowModule} from '../window/window.module';
 
@@ -7,6 +9,7 @@ import {WindowModule} from '../window/window.module';
     FocusTrapService,
   ],
   imports: [
+    A11yModule,
     WindowModule,
   ]
 })

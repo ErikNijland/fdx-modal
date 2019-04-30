@@ -1,4 +1,6 @@
 import {Injectable, ElementRef} from '@angular/core';
+import {FocusTrapFactory} from '@angular/cdk/a11y';
+
 import {AriaHiddenState} from './types/aria-hidden-state';
 import {isString} from 'lodash';
 
@@ -6,8 +8,13 @@ import {isString} from 'lodash';
 export class FocusTrapService {
   private originalAriaHiddenStates: AriaHiddenState[] = [];
 
+  constructor(private focusTrapFactory: FocusTrapFactory) {}
+
   setFocus(elementRef: ElementRef) {
-    this.setAriaHidden(elementRef.nativeElement);
+    //this.setAriaHidden(elementRef.nativeElement);
+    const poep = this.focusTrapFactory.create(elementRef.nativeElement);
+    console.log(poep.destroy());
+
   }
 
   clearFocus() {
