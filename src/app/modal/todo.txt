@@ -1,11 +1,10 @@
-- Make FocusTrap inline
-- Make stand-alone FocusTrap module
+- Move modal in DOM (check with Jan)
 - Check old modal for parameters
 - Escape to close
 - Can registerModal be private?
 - distinctUntilChanges on isOpen
-- Move modal in DOM (check with Jan)
 - scroll within modal (or not)
+- Can we use @angular/cdk
 
 - Directive to attach to button
 - How to use readme

@@ -1,4 +1,4 @@
-<div *ngIf="showModal$ | async" class="c-modal">
+<div *ngIf="showModal$ | async" class="c-modal" [cdkTrapFocus]="true">
   <div class="c-modal__background"></div>
   <div class="c-modal__foreground">
     <ng-content></ng-content>
