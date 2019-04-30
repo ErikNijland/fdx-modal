@@ -1,32 +1,36 @@
 import {Injectable, ElementRef} from '@angular/core';
-import {FocusTrapFactory} from '@angular/cdk/a11y';
+import {FocusTrapFactory, FocusTrap} from '@angular/cdk/a11y';
 
 import {AriaHiddenState} from './types/aria-hidden-state';
 import {isString} from 'lodash';
 
 @Injectable()
 export class FocusTrapService {
+  private originalFocusElement: Element;
   private originalAriaHiddenStates: AriaHiddenState[] = [];
+  private keyboardTrap: FocusTrap;
 
   constructor(private focusTrapFactory: FocusTrapFactory) {}
 
   setFocus(elementRef: ElementRef) {
-    //this.setAriaHidden(elementRef.nativeElement);
-    const poep = this.focusTrapFactory.create(elementRef.nativeElement);
-    console.log(poep.destroy());
-
+    this.originalFocusElement = document.activeElement;
+    this.setKeyboardFocus(elementRef.nativeElement);
+    this.setAriaHidden(elementRef.nativeElement);
   }
 
   clearFocus() {
-    this.originalAriaHiddenStates.forEach((originalState) => {
-      if (isString(originalState.ariaHidden)) {
-        originalState.element.setAttribute('aria-hidden', originalState.ariaHidden);
-      } else {
-        originalState.element.removeAttribute('aria-hidden');
-      }
-    });
+    this.restoreKeyboardFocus();
+    this.restoreAriaHidden();
+    this.restoreOriginalFocus();
+  }
 
-    this.originalAriaHiddenStates.length = 0;
+  private setKeyboardFocus(element: HTMLElement) {
+    this.keyboardTrap = this.focusTrapFactory.create(element);
+    this.keyboardTrap.focusFirstTabbableElementWhenReady();
+  }
+
+  private restoreKeyboardFocus() {
+    this.keyboardTrap.destroy();
   }
 
   /*
@@ -52,5 +56,24 @@ export class FocusTrapService {
     });
 
     this.setAriaHidden(element.parentElement);
+  }
+
+  private restoreAriaHidden() {
+    this.originalAriaHiddenStates.forEach((originalState) => {
+      if (isString(originalState.ariaHidden)) {
+        originalState.element.setAttribute('aria-hidden', originalState.ariaHidden);
+      } else {
+        originalState.element.removeAttribute('aria-hidden');
+      }
+    });
+
+    this.originalAriaHiddenStates.length = 0;
+  }
+
+  private restoreOriginalFocus() {
+    if (this.originalFocusElement instanceof HTMLElement) {
+      console.log(this.originalFocusElement);
+      this.originalFocusElement.focus();
+    }
   }
 }

@@ -9,10 +9,10 @@ export class AppComponent implements OnInit {
   constructor(private modalService: ModalService) {}
 
   ngOnInit() {
-    setTimeout(() => this.showModal());
+    setTimeout(() => this.showModal(), 2000);
   }
 
   showModal() {
-    this.modalService.openModal('myModal');
+    this.modalService.openModal('myModal');   
   }
 }

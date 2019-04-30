@@ -1,5 +1,6 @@
-import {Injectable, ElementRef} from '@angular/core';
+import {Injectable, ElementRef, ApplicationRef} from '@angular/core';
 import {Observable, BehaviorSubject} from 'rxjs';
+import {filter, take, tap} from 'rxjs/operators';
 
 import {DomService} from '../dom/dom.service';
 import {FocusTrapService} from '../focus-trap/focus-trap.service';
@@ -10,6 +11,7 @@ export class ModalService {
   modals: { [modalName: string]: ModalState } = {};
 
   constructor(
+    private applicationRef: ApplicationRef,
     private domService: DomService,
     private focusTrapService: FocusTrapService,
   ) {}
