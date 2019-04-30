@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
     // setTimeout(() => this.showModal(), 2000);
   }
 
-  showModal() {
-    this.modalService.openModal('myModal');   
+  showModal(modalName: string) {
+    this.modalService.openModal(modalName);   
   }
 }

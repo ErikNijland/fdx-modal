@@ -1,11 +1,9 @@
+- scroll within modal (or not)
 - Check old modal for parameters
 - Test modal input updates after dom move
-- Escape to close
 - distinctUntilChanged on isOpen
-- clickOutside to close
-- scroll within modal (or not)
 
 - Directive to attach to button
-- How to use readme
 - Jan CSS
 - ARIA stuff needed?
+- readme
