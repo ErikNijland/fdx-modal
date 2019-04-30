@@ -1,3 +1,4 @@
+- set focus when opening modal on ios
 - distinctUntilChanged on isOpen
 
 - Directive to attach to button
