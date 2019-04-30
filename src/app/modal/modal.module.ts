@@ -4,6 +4,7 @@ import {CommonModule} from '@angular/common';
 import {ModalComponent} from './modal.component';
 import {ModalService} from './modal.service';
 import {DomModule} from '../dom/dom.module';
+import {WindowModule} from '../window/window.module';
 import {FocusTrapModule} from '../focus-trap/focus-trap.module';
 
 @NgModule({
@@ -17,6 +18,7 @@ import {FocusTrapModule} from '../focus-trap/focus-trap.module';
     CommonModule,
     DomModule,
     FocusTrapModule,
+    WindowModule,
   ],
   exports: [
     ModalComponent,

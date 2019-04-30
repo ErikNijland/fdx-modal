@@ -1,5 +1,5 @@
 .c-modal__background {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
@@ -10,7 +10,7 @@
 }
 
 .c-modal__foreground {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);

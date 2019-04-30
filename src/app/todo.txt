@@ -1,9 +1,8 @@
-- See if there is an CdkFocusTrap call possible with a service instead of directive
-- Check old modal for parameters
 - Show/hide scrollbar
+- Check old modal for parameters
 - Test modal input updates after dom move
 - Escape to close
-- distinctUntilChanges on isOpen
+- distinctUntilChanged on isOpen
 - clickOutside to close
 - scroll within modal (or not)
 
