@@ -1,8 +1,11 @@
 import {Injectable, ElementRef} from '@angular/core';
+import {WindowService} from '../window/window.service';
 
 @Injectable()
 export class DomService {
-  move(item: ElementRef, to: ElementRef) {
-    item.nativeElement.appendChild(to.nativeElement);
+  constructor(private windowService: WindowService) {}
+
+  moveToBody(item: ElementRef) {
+    this.windowService.document.body.appendChild(item.nativeElement);
   }
 }

@@ -1,5 +1,6 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, OnInit, Input, ElementRef} from '@angular/core';
 import {ModalService} from './modal.service';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'modal',
@@ -11,10 +12,13 @@ export class ModalComponent implements OnInit {
 
   showModal$: Observable<boolean>;
 
-  constructor(private modalService: ModalService) {}
+  constructor(
+    private elementRef: ElementRef,
+    private modalService: ModalService,
+  ) {}
 
   ngOnInit() {
-    this.modalService.registerModal(this.modalName);
+    this.modalService.registerModal(this.modalName, this.elementRef);
     this.showModal$ = this.modalService.isOpen(this.modalName);
   }
 

@@ -7,13 +7,10 @@ import {DomService} from '../dom/dom.service';
 export class ModalService {
   modals: { [modalName: string]: BehaviorSubject<boolean> } = {};
 
-  constructor(
-    private domService: DomService,
-    private elementRef: ElementRef,
-  ) {}
+  constructor(private domService: DomService) {}
 
-  registerModal(modalName: string) {
-    this.domService.moveToBody(this.elementRef);
+  registerModal(modalName: string, elementRef: ElementRef) {
+    this.domService.moveToBody(elementRef);
     this.modals[modalName] = new BehaviorSubject(false);
   }
 
