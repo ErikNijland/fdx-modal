@@ -1,5 +1,7 @@
 - Focus Trap aria-hidden
+- See if there is an CdkFocusTrap call possible with a service instead of directive
 - Check old modal for parameters
+- Show/hide scrollbar
 - Test modal input updates after dom move
 - Escape to close
 - distinctUntilChanges on isOpen
