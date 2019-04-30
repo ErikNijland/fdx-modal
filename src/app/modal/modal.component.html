@@ -1,6 +1,6 @@
 <div *ngIf="showModal$ | async" class="c-modal">
   <div class="c-modal__background" (click)="closeModal()"></div>
-  <div class="c-modal__foreground">
+  <div class="c-modal__foreground" tabindex="-1" cdkFocusInitial>
     <ng-content></ng-content>
 
     <button (click)="closeModal()">Close modal</button>

@@ -26,7 +26,8 @@ export class FocusTrapService {
 
   private setKeyboardFocus(element: HTMLElement) {
     this.keyboardTrap = this.focusTrapFactory.create(element);
-    this.keyboardTrap.focusFirstTabbableElementWhenReady();
+    this.keyboardTrap.focusInitialElementWhenReady();
+
   }
 
   private restoreKeyboardFocus() {

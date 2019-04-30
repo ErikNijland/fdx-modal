@@ -1,4 +1,4 @@
-- scroll within modal (or not)
+- pressing tab seems to change the background
 - Check old modal for parameters
 - Test modal input updates after dom move
 - distinctUntilChanged on isOpen
