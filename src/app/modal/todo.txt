@@ -5,6 +5,7 @@
 - Test modal input updates after dom move
 - Escape to close
 - distinctUntilChanges on isOpen
+- clickOutside to close
 - scroll within modal (or not)
 
 - Directive to attach to button

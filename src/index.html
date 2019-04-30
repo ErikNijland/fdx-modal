@@ -3,7 +3,14 @@
   <p>This header is outside of the Angular scope</p>
 </header>
 
-<my-app>loading</my-app>
+<main>
+  <my-app>loading</my-app>
+  <aside>
+    <h2>Non Angular content</h2>
+    <p>In pellentesque diam bibendum. Suspendisse in nulla non ex cursus tempor.</p>
+    <button>Placeholder button</button>
+  </aside>
+</main>
 
 <footer>
   <h1>Footer</h1>
@@ -14,3 +21,7 @@
     <li><a href="http://www.example.com/">Footer link #3</a></li>
   </ul>
 </footer>
+
+<h1>Aria hidden original state test</h1>
+<div aria-hidden="true">This is always hidden for screen readers</div>
+<div aria-hidden="false">This is not hidden for screen readers</div>
