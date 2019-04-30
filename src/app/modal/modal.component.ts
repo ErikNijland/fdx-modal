@@ -22,7 +22,7 @@ export class ModalComponent implements OnInit {
     this.showModal$ = this.modalService.isOpen(this.modalName);
   }
 
-  closeModal() {
+  closeModal(eventTarget: EventTarget) {
     this.modalService.closeModal(this.modalName);
   }
 }

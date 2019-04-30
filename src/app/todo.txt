@@ -1,4 +1,3 @@
-- Show/hide scrollbar
 - Check old modal for parameters
 - Test modal input updates after dom move
 - Escape to close
