@@ -4,6 +4,7 @@ import {A11yModule} from '@angular/cdk/a11y';
 
 import {ModalComponent} from './modal.component';
 import {ModalService} from './modal.service';
+import {DomModule} from '../dom/dom.module';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import {ModalService} from './modal.service';
   imports: [
     A11yModule,
     CommonModule,
+    DomModule,
   ],
   exports: [
     ModalComponent,
