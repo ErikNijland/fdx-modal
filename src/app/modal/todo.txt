@@ -1,4 +1,3 @@
-- Dummy CSS
 - Make FocusTrap inline
 - Make stand-alone FocusTrap module
 - Check old modal for parameters
