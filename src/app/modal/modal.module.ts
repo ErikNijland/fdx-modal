@@ -5,6 +5,7 @@ import {A11yModule} from '@angular/cdk/a11y';
 import {ModalComponent} from './modal.component';
 import {ModalService} from './modal.service';
 import {DomModule} from '../dom/dom.module';
+import {FocusTrapModule} from '../focus-trap/focus-trap.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import {DomModule} from '../dom/dom.module';
     A11yModule,
     CommonModule,
     DomModule,
+    FocusTrapModule,
   ],
   exports: [
     ModalComponent,
