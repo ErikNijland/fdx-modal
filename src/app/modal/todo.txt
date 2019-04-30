@@ -1,8 +1,13 @@
-- ARIA stuff needed?
-- Jan CSS
-- Directive
-- How to use readme
-- Escape to close
-- Focus trap
+- Close modal
+- Dummy CSS
+- Make FocusTrap inline
+- Make stand-alone FocusTrap module
 - Check old modal for parameters
+- Escape to close
 - Can registerModal be private?
+- distinctUntilChanges on isOpen
+
+- Directive to attach to button
+- How to use readme
+- Jan CSS
+- ARIA stuff needed?
