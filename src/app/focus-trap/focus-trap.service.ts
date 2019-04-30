@@ -72,7 +72,6 @@ export class FocusTrapService {
 
   private restoreOriginalFocus() {
     if (this.originalFocusElement instanceof HTMLElement) {
-      console.log(this.originalFocusElement);
       this.originalFocusElement.focus();
     }
   }

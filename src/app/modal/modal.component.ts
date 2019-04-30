@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, ElementRef} from '@angular/core';
+import {Component, OnInit, Input, ElementRef, HostListener} from '@angular/core';
 import {ModalService} from './modal.service';
 import {Observable} from 'rxjs';
 
@@ -22,7 +22,8 @@ export class ModalComponent implements OnInit {
     this.showModal$ = this.modalService.isOpen(this.modalName);
   }
 
-  closeModal(eventTarget: EventTarget) {
+  @HostListener('document:keydown.escape')
+  closeModal() {
     this.modalService.closeModal(this.modalName);
   }
 }
