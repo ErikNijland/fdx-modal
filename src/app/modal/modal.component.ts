@@ -14,5 +14,7 @@ export class ModalComponent implements OnInit {
   constructor(private modalService: ModalService) {}
 
   ngOnInit() {
+    this.modalService.registerModal(this.modalName);
+    this.showModal$ = this.modalService.isOpen(this.modalName);
   }
 }

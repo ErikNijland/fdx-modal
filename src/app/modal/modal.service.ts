@@ -1,12 +1,12 @@
 import {Injectable} from '@angular/core';
-import {BehaviourSubject, Observable} from 'rxjs';
+import {Observable, BehaviorSubject} from 'rxjs';
 
 @Injectable()
 export class ModalService {
-  modals: { [modalName: string]: BehaviourSubject<boolean> } = {};
+  modals: { [modalName: string]: BehaviorSubject<boolean> } = {};
 
   registerModal(modalName: string) {
-    this.modals[modalName] = new BehaviourSubject(false);
+    this.modals[modalName] = new BehaviorSubject(false);
   }
 
   openModal(modalName: string) {
