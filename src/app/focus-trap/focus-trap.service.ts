@@ -26,7 +26,7 @@ export class FocusTrapService {
 
   private setKeyboardFocus(element: HTMLElement) {
     this.keyboardTrap = this.focusTrapFactory.create(element);
-    this.keyboardTrap.focusInitialElementWhenReady(); // DOes not work in iOS :@
+    this.keyboardTrap.focusInitialElementWhenReady(); // Does not work in iOS :@
   }
 
   private restoreKeyboardFocus() {
