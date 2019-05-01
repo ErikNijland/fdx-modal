@@ -1,6 +1,6 @@
 <div *ngIf="showModal$ | async" class="c-modal">
   <div class="c-modal__background" (click)="closeModal()"></div>
-  <div role="dialog" class="c-modal__foreground">
+  <div aria-modal="true" class="c-modal__foreground">
     <ng-content></ng-content>
 
     <button (click)="closeModal()" cdkFocusInitial>Close modal</button>

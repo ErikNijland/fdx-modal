@@ -1,7 +1,4 @@
-- set focus when opening modal on ios
-- distinctUntilChanged on isOpen
-
 - Directive to attach to button
 - Jan CSS
-- ARIA stuff needed?
+- ARIA stuff: aria-modal="true" and/or role="dialog"
 - readme
