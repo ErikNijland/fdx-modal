@@ -10,7 +10,6 @@ import {WindowService} from '../window/window.service';
 @Injectable()
 export class ModalService {
   private modals: { [modalName: string]: ModalState } = {};
-  private originalBodyStyle: CSSStyleDeclaration;
 
   constructor(
     private applicationRef: ApplicationRef,
@@ -45,18 +44,13 @@ export class ModalService {
     return this.modals[modalName].isOpen;
   }
 
-  private restoreScrollbar() {
-    const bodyStyle = this.windowService.document.body.style;
-
-    bodyStyle.position = this.originalBodyStyle.position;
-    bodyStyle.overflowY = this.originalBodyStyle.overflowY;
+  private hideScrollbar() {
+    this.windowService.document.body.style.position = 'fixed';
+    this.windowService.document.body.style.overflowY = 'hidden';
   }
 
-  private hideScrollbar() {
-    const bodyStyle = this.windowService.document.body.style;
-    this.originalBodyStyle = this.windowService.document.body.style;
-
-    bodyStyle.position = 'fixed';
-    bodyStyle.overflowY = 'hidden';
+  private restoreScrollbar() {
+    this.windowService.document.body.style.position = 'static';
+    this.windowService.document.body.style.overflowY = 'auto';
   }
 }
