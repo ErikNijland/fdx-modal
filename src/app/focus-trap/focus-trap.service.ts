@@ -13,7 +13,7 @@ export class FocusTrapService {
   constructor(private focusTrapFactory: FocusTrapFactory) {}
 
   setFocus(elementRef: ElementRef) {
-    this.originalFocusElement = document.activeElement;
+    this.originalFocusElement = document.activeElement.querySelector('.c-modal__foreground');
     this.setKeyboardFocus(elementRef.nativeElement);
     this.setAriaHidden(elementRef.nativeElement);
   }

@@ -45,12 +45,14 @@ export class ModalService {
   }
 
   private hideScrollbar() {
-    this.windowService.document.body.style.position = 'fixed';
+    // this.windowService.document.body.style.position = 'fixed';
+    this.windowService.document.querySelector('html').style.overflowY = 'hidden';
     this.windowService.document.body.style.overflowY = 'hidden';
   }
 
   private restoreScrollbar() {
-    this.windowService.document.body.style.position = 'static';
+    // this.windowService.document.body.style.position = 'static';
+    this.windowService.document.querySelector('html').style.overflowY = 'auto';
     this.windowService.document.body.style.overflowY = 'auto';
   }
 }
